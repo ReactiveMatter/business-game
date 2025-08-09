@@ -15,12 +15,15 @@ class TileGroup {
 var tileGroups = [
   new TileGroup({ id: 1, name: 'Default', color: 'transparent' }),
   new TileGroup({ id: 2, name: 'Japan', color: '#b2fdf3ff' }),
-  new TileGroup({ id: 3, name: 'Canada', color: '#fe9eaeff' }),
+  new TileGroup({ id: 3, name: 'Canada', color: '#ffaab8ff' }),
   new TileGroup({ id: 4, name: 'India', color: '#FFA500' }),
   new TileGroup({ id: 5, name: 'USA', color: '#dc6262ff' }),
   new TileGroup({ id: 6, name: 'UK', color: '#f8ea4bff' }),
   new TileGroup({ id: 7, name: 'Australia', color: '#51d951ff' }),
-  new TileGroup({ id: 8, name: 'Germany', color: '#A8A8FF' }),
+  new TileGroup({ id: 8, name: 'Germany', color: '#d4a8ffff' }),
+  new TileGroup({ id: 9, name: 'China', color: '#5872f4ff' }),
+  new TileGroup({ id: 10, name: 'Russia', color: '#b2fe8eff' }),
+  new TileGroup({ id: 11, name: 'Egypt', color: '#fafcb1ff' }),
 ];
 
 class Tile {
@@ -163,29 +166,6 @@ tiles.push(new Tile({
   position: 1
 }));
 
-// Map tileGroups to country names (skip Default)
-const groupCountryMap = [
-  null, // index 0 unused
-  'Default', // 1: Default
-  'Japan',
-  'Canada',
-  'India',
-  'USA',
-  'UK',
-  'Australia',
-  'Germany'
-];
-
-// Updated countryCities to match new group ids
-const countryCities = {
-  Japan: ['Tokyo', 'Osaka', 'Kyoto'],
-  Canada: ['Toronto', 'Vancouver', 'Montreal'],
-  India: ['Mumbai', 'Delhi', 'Bangalore', 'Chennai'],
-  USA: ['New York', 'Los Angeles', 'Chicago', 'San Francisco'],
-  UK: ['London', 'Manchester', 'Liverpool'],
-  Australia: ['Sydney', 'Melbourne'],
-  Germany: ['Berlin', 'Munich']
-};
 
 
 // Add all city tiles to a temp array, no for loops, explicit calls only
@@ -194,31 +174,31 @@ let id = 2;
 
 // Japan (group 2)
 cityTiles.push(new Tile({ id: id++, name: 'Tokyo', group: 2, type: 'place', price: 1500}));
-cityTiles.push(new Tile({ id: id++, name: 'Osaka', group: 2, type: 'place', price: 1000 }));
+//cityTiles.push(new Tile({ id: id++, name: 'Osaka', group: 2, type: 'place', price: 1000 }));
 cityTiles.push(new Tile({ id: id++, name: 'Kyoto', group: 2, type: 'place', price: 1200 }));
 
 
 // Canada (group 3)
 cityTiles.push(new Tile({ id: id++, name: 'Toronto', group: 3, type: 'place', price: 1800}));
-cityTiles.push(new Tile({ id: id++, name: 'Vancouver', group: 3, type: 'place', price: 1200 }));
-cityTiles.push(new Tile({ id: id++, name: 'Montreal', group: 3, type: 'place' , price: 800}));
+//cityTiles.push(new Tile({ id: id++, name: 'Vancouver', group: 3, type: 'place', price: 1200 }));
+cityTiles.push(new Tile({ id: id++, name: 'Montreal', group: 3, type: 'place' , price: 1000}));
 
 // India (group 4)
-cityTiles.push(new Tile({ id: id++, name: 'Mumbai', group: 4, type: 'place', price: 1800}));
-cityTiles.push(new Tile({ id: id++, name: 'Delhi', group: 4, type: 'place' , price: 2000}));
-cityTiles.push(new Tile({ id: id++, name: 'Bangalore', group: 4, type: 'place', price: 1500 }));
-cityTiles.push(new Tile({ id: id++, name: 'Chennai', group: 4, type: 'place' , price: 1200}));
+cityTiles.push(new Tile({ id: id++, name: 'Mumbai', group: 4, type: 'place', price: 2000}));
+cityTiles.push(new Tile({ id: id++, name: 'Delhi', group: 4, type: 'place' , price: 2500}));
+cityTiles.push(new Tile({ id: id++, name: 'Bangalore', group: 4, type: 'place', price: 2000 }));
+//cityTiles.push(new Tile({ id: id++, name: 'Chennai', group: 4, type: 'place' , price: 1200}));
 
 // USA (group 5)
-cityTiles.push(new Tile({ id: id++, name: 'New York', group: 5, type: 'place' , price: 2100}));
-cityTiles.push(new Tile({ id: id++, name: 'Los Angeles', group: 5, type: 'place', price: 1500}));
+cityTiles.push(new Tile({ id: id++, name: 'New York', group: 5, type: 'place' , price: 3000}));
+cityTiles.push(new Tile({ id: id++, name: 'Los Angeles', group: 5, type: 'place', price: 2000}));
 cityTiles.push(new Tile({ id: id++, name: 'Chicago', group: 5, type: 'place' , price: 1800}));
-cityTiles.push(new Tile({ id: id++, name: 'San Francisco', group: 5, type: 'place' , price: 1200}));
+//cityTiles.push(new Tile({ id: id++, name: 'San Francisco', group: 5, type: 'place' , price: 1200}));
 
 // UK (group 6)
 cityTiles.push(new Tile({ id: id++, name: 'London', group: 6, type: 'place' , price: 1500}));
 cityTiles.push(new Tile({ id: id++, name: 'Manchester', group: 6, type: 'place' , price: 1000}));
-cityTiles.push(new Tile({ id: id++, name: 'Liverpool', group: 6, type: 'place' , price: 900}));
+//cityTiles.push(new Tile({ id: id++, name: 'Liverpool', group: 6, type: 'place' , price: 900}));
 
 // Australia (group 7)
 cityTiles.push(new Tile({ id: id++, name: 'Sydney', group: 7, type: 'place' , price: 1000}));
@@ -227,6 +207,20 @@ cityTiles.push(new Tile({ id: id++, name: 'Melbourne', group: 7, type: 'place' ,
 // Germany (group 8)
 cityTiles.push(new Tile({ id: id++, name: 'Berlin', group: 8, type: 'place' , price: 1000}));
 cityTiles.push(new Tile({ id: id++, name: 'Munich', group: 8, type: 'place' , price: 700}));
+
+// China (group 9)
+cityTiles.push(new Tile({ id: id++, name: 'Beijing', group: 9, type: 'place', price: 3000 }));
+cityTiles.push(new Tile({ id: id++, name: 'Schenzen', group: 9, type: 'place', price: 2000 }));
+cityTiles.push(new Tile({ id: id++, name: 'Guangzhou', group: 9, type: 'place', price: 1500 }));
+
+// Russia (group 10)
+cityTiles.push(new Tile({ id: id++, name: 'Moscow', group: 10, type: 'place', price: 1500 }));
+cityTiles.push(new Tile({ id: id++, name: 'St Petersburg', group: 10, type: 'place', price: 1200 }));
+
+// Egypt (group 11)
+cityTiles.push(new Tile({ id: id++, name: 'Cairo', group: 11, type: 'place', price: 1000 }));
+cityTiles.push(new Tile({ id: id++, name: 'Alexandria', group: 11, type: 'place', price: 500 }));
+
 
 
 // Randomly distrbuted tiles
