@@ -446,7 +446,8 @@ function updateselectedTileID() {
         t += `<div class="tile-price tile-row"><div>Price: ${tile.price} </div><div>Rent: ${tile.getRent()}</div></div>`;
         t += `<div class="tile-houseprice tile-row"><div>House buy price: ${Math.floor(tile.price*config.houseCost)} </div><div> House sell price: ${Math.floor(tile.price*config.houseCost*config.houseDepreciation)}</div></div>`;
         t += `<div class="tile-houseprice tile-row"><div>Mortgage value: ${Math.floor(tile.price*config.mortgageRate)} </div></div>`;
-  
+        t += `<div class="tile-row"><div>House rent will increase by ${Math.floor((config.rentIncrement)*config.rent*tile.price)} per house </div></div>`;
+
         if(t_owner)
         {
             if(tile.mortgaged)
