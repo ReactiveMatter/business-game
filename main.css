@@ -243,7 +243,7 @@ button
     gap: var(--gap);
 }
 .message.flex .flex-row{
-  padding: 0.5rem;
+  padding: 0.2rem;
   border: 1px solid #ccc;
   border-radius: var(--gap);
   flex: 1;
@@ -267,7 +267,7 @@ button
 
 .selected-tile .tile-name
 {
-    padding: 0.5rem;
+    padding: 0.2rem;
     border: 1px solid #ccc;
     background: #f0f0f0;
     border-radius: var(--gap);
@@ -275,7 +275,7 @@ button
 
 .selected-tile .tile-row>div
 {
-    padding: 0.5rem;
+    padding: 0.2rem;
     border: 1px solid #ccc;
     border-radius: var(--gap);
     flex: 1
