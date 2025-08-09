@@ -1,0 +1,308 @@
+html 
+{   font-size: 16px;
+    --tile-size: 8rem;
+    --gap: 4px;
+}
+
+body
+{   
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+
+.board
+{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+}
+
+
+
+.tiles
+{  
+    gap: var(--gap);
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--gap);
+    cursor: pointer;
+
+}
+
+
+.main 
+{
+    padding: var(--gap);
+    flex-grow: 1;
+    display: flex;
+    gap: var(--gap);
+    /* flex-wrap: wrap; */
+}
+
+.tile 
+{
+    box-sizing: border-box;
+    border:1px solid black;
+    width: var(--tile-size);
+    height: var(--tile-size);
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    overflow: auto;
+}
+
+.tile-middle
+{
+    flex-grow: 1;
+}
+
+.tile-row
+{
+    padding: var(--gap);
+    display: flex;
+    gap: var(--gap);
+}
+
+
+
+.tile-houses 
+{
+    height: 1.2rem;
+    display: flex;
+    gap: var(--gap);
+    flex-wrap: wrap;
+}
+
+.tile-houses .fa-hotel
+{
+    color: crimson;
+}
+
+.tile-houses .fa-home
+{
+    color: #008f00;
+}
+
+.tile-name
+{
+    flex-grow: 1;
+}
+
+.tile-owner
+{
+    font-size: 1rem;
+    color: white;
+    border-radius: 1.2rem;
+    height: 1.2rem;
+    width: 1.2rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+}
+
+
+
+.player-board, .player-networth
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    padding: var(--gap);
+    border-radius: var(--gap);
+    border: 1px solid black;
+    flex-direction: column;
+    min-width: 10rem;
+    max-width: 20%;
+    overflow: auto;
+}
+
+.main .header
+{
+    font-weight: bold;
+    margin-bottom: 4px;
+    background: #f0f0f0;
+    padding: 0.2rem;
+    margin-left: calc(-1 * var(--gap));
+    margin-right: calc(-1 * var(--gap));
+    margin-top: calc(-1 * var(--gap));
+    border-bottom: 1px solid black;
+}
+
+.player-info
+{
+    display: flex;
+    padding: var(--gap);
+    background: #fff;
+    border: 1px solid;
+    grid-area: var(--gap);
+    border-color: #fff;
+    margin-left: calc(-1*var(--gap));
+    margin-right: calc(-1*var(--gap));
+    border-left: 0px;
+    border-right: 0px;
+    gap: var(--gap);
+}
+
+.player-info.active 
+{
+    background: #ffcfcf;
+    border-color: rgb(251, 115, 115);
+}
+
+.player-info .name
+{
+    flex-grow: 1;
+}
+
+.game
+{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    padding: var(--gap);
+    border-radius: var(--gap);
+    border: 1px solid black;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.game-options
+{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    padding: var(--gap);
+    border-radius: var(--gap);
+    border: 1px solid black;
+    min-width: 10rem;
+    max-width: 30%;
+    overflow: auto;
+}
+
+.selected-tile
+{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    padding: var(--gap);
+    border-radius: var(--gap);
+    border: 1px solid black;
+    min-width: 20rem;
+    max-width: 25%;
+    overflow: auto;
+}
+
+.selected-tile .tile-row:not(.tile-group)
+{
+    padding: 0;
+}
+
+.selected-tile-options
+{
+    display: flex;
+    gap: var(--gap);
+}
+
+.game-options .option
+{
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+#next
+{
+    background: #beff89;
+    border: 1px solid black;
+    border-radius: var(--gap);
+}
+
+.players-on-tile
+{
+    display: flex;
+    gap: calc(2*var(--gap));
+    font-size: 1.5rem;
+}
+
+button 
+{
+    cursor: pointer;
+}
+
+.message 
+{
+    overflow: scroll;
+}
+
+.message.flex 
+{
+    flex-direction: column;
+    gap: var(--gap);
+}
+.message.flex .flex-row{
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: var(--gap);
+  flex: 1;
+}
+
+
+.flex 
+{
+    display: flex;;
+}
+
+.flex.column 
+{
+    flex-direction: column;
+}
+
+.flex>.row 
+{
+    flex-wrap: wrap;
+}
+
+.selected-tile .tile-name
+{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    background: #f0f0f0;
+    border-radius: var(--gap);
+}
+
+.selected-tile .tile-row>div
+{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: var(--gap);
+    flex: 1
+
+}
+
+.selected-tile .tile-owner 
+{
+    max-width: 2rem;
+    border: none;
+}
+
+.dices
+{
+  display: flex;
+  gap: var(--gap);
+
+}
+
+.dice 
+{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+    border-radius: var(--gap);
+    border: 1px solid black;
+}
