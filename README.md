@@ -1,6 +1,6 @@
 # Business game
 
-An offline Monopoly like game built in HTML.
+An offline Monopoly like game, built in HTML.
 
 The game is still under progress.
 
