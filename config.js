@@ -5,10 +5,10 @@ var config = {
     rent: 0.25,
     maxHouses: 9, // Maximum number of houses per property
     houseToHotel: 3, // Three houses are interpreted as a hotel
-    rentIncrement: 1.5, // 225% increase in rent per house
+    rentIncrement: 1.5, // % of original rent increase
     initialMoney: 10000, // Starting money for each player
-    incomeAfterRound: 1000, // Income after one round
-    bailAmount: 420,
+    incomeAfterRound: 250, // Income after one round
+    bailAmount: 500,
     maxPlayers: 4, // Maximum number of players
 }
 
